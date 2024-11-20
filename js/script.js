@@ -224,7 +224,7 @@ function createSwear(words, record) {
     container.rel = 'noopener';
 
     const startX = Math.random() * window.innerWidth;
-    container.style.left = `${startX}px`;
+    container.style.left = `calc(${startX}px - 5em)`;
     container.style.rotate = `${-10 + (Math.random() * 20)}deg`;
 
     // Add SVG background
