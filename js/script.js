@@ -237,7 +237,7 @@ function createSwear(words, record) {
             playing = true;
             setTimeout(() => {
                 playing = false;
-            },250);
+            },300);
         }
     },250);
 

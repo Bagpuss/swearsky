@@ -29,7 +29,7 @@ p {
 }
 
 button {
-    background-color: #325fc6;
+    background-color: #1185FE;
     color:white;
     font-family: "Road Rage", sans-serif;
     font-weight: 400;
@@ -37,6 +37,11 @@ button {
     font-size: 1.5em;
     margin-top:0.5em;
     cursor: pointer;
+    padding: 0.1em 1em;
+}
+
+button:hover {
+    background-color: #1A1A54;
 }
 
 #introContainer {

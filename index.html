@@ -4,6 +4,12 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
         <meta name="description" content="Bluesky profanity, as it happens">
         <meta name="author" content="Dave Bagpuss Forsey">
@@ -12,18 +18,23 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://swearsky.bagpuss.org">
         <meta property="og:image" content="https://swearsky.bagpuss.org/socials.jpg">
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="SwearSky">
         <meta name="twitter:description" content="Bluesky profanity, as it happens">
-        <meta property="og:image" content="https://swearsky.bagpuss.org/socials.jpg">
+        <meta name="twitter:image" content="https://swearsky.bagpuss.org/socials.jpg">
+        <meta name="twitter:creator" content="@bagpuss_org"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Road+Rage&display=swap" rel="stylesheet">
         <title>SwearSky – profanity from Bluesky, as it happens</title>
+
+        <script defer src="https://stats.bagpuss.org/script.js" data-website-id="b7122128-c933-4ffc-98de-8450b8844dca"></script>
+        <script src="js/howler.min.js"></script>
+        <script type="text/javascript" src="js/svg-loader.min.js" async></script>
     </head>
 
-    <script src="js/howler.min.js"></script>
-    <script type="text/javascript" src="js/svg-loader.min.js" async></script>
 
     <body>
         <div id="swearContainer"></div>
@@ -41,7 +52,7 @@
                 <hr />
                 <p class="warning">⚠️ &nbsp; Warning! Very sweary. Probably NSFW &nbsp; ⚠️
                 <hr />
-                <p>Turn your sound up to hear the swears.</p>
+                <p>Turn your sound up to hear the swears. Or down to not.</p>
                 <p>Made by <a href="https://bsky.app/profile/bagpuss.org" target="_blank" rel="noopener">Dave Bagpuss Forsey</a><br />
                 Based on <a href="https://emojirain.lol" target="_blank" rel="noopener">EmojiRain</a> by <a href="https://bsky.app/profile/jaredshort.com" target="_blank" rel="noopener">@jaredshort.com</a></p>
                 <button onclick="start()">Ciick here to start</button>
