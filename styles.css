@@ -1,0 +1,183 @@
+html {
+    margin:0;
+    padding:0;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(9deg, #325fc6 0%, #85b6f8 100%);
+    background-image: url('img/sky.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100svw;
+    height: 100svh;
+    overflow: hidden;
+    font-size: 3svh;
+    font-family: "Road Rage", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+p {
+    margin:0;
+}
+
+button {
+    background-color: #325fc6;
+    color:white;
+    font-family: "Road Rage", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+    margin-top:0.5em;
+    cursor: pointer;
+}
+
+#introContainer {
+    background-color: #000000A0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100svw;
+    height:100svh;
+    z-index: 2;
+}
+
+#intro {
+    text-align: center;
+    padding: 2em;
+    text-shadow: 1px 1px black;
+    color:white;
+}
+
+#intro a {
+    color:white;
+}
+
+#intro .logo {
+    width: 30vmin;
+    height: auto;
+}
+
+#intro .title {
+    font-size: 4em;
+}
+
+#intro .description {
+    font-size: 1.52em;
+}
+#swearContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.swearword {
+    position: absolute;
+    text-decoration: none;
+    display: inline-block;
+    color:black;
+    transition: transform 0.2s ease;
+    z-index: 1;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(200%) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateY(180%) rotate(2deg);
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110svh) rotate(15deg);
+        opacity: 0;
+    }
+}
+
+#connectionOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#connectionOverlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.status-message {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2em;
+    color: #1a2a6c;
+}
+
+.rotating-emoji {
+    display: inline-block;
+    font-size: 1.4em;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.swear-speech {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    will-change: transform, opacity;
+    animation: fall linear forwards;
+    cursor: pointer !important;
+    pointer-events: all !important;
+    z-index: 1;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+    top: 100svh !important;
+    width: 8em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.swear-speech:hover {
+    filter: invert();
+    cursor: pointer;
+}
