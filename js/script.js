@@ -242,6 +242,7 @@ function createSwear(words, record) {
 }
 
 function connectWebSocket() {
+    console.log("st")
     // Clear any existing timers
     if (reconnectTimer) clearTimeout(reconnectTimer);
     if (heartbeatInterval) clearInterval(heartbeatInterval);
@@ -309,7 +310,6 @@ function connectWebSocket() {
     ws.onmessage = (event) => {
         const data = JSON.parse(event.data);
 
-        // if (data.commit?.record?.text && regex.test(data.commit.record.text)) {
         if (data.commit?.record?.text && swears.filter(e => data.commit.record.text.includes(e)).length > 0) {
             const words = swears.filter(e => data.commit.record.text.includes(e));
 
@@ -321,39 +321,42 @@ function connectWebSocket() {
 }
 
 function scheduleReconnect() {
-    if (reconnectTimer) clearTimeout(reconnectTimer);
-
-    reconnectTimer = setTimeout(() => {
-        connectWebSocket();
-        // Increase backoff time for next attempt
-        currentBackoff = Math.min(currentBackoff * BACKOFF_MULTIPLIER, MAX_BACKOFF);
-    }, currentBackoff);
-}
-
-// Update the visibility change handler
-document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') {
-        // Check if we already have an active connection
-        if (activeConnection && activeConnection.readyState === WebSocket.OPEN) {
-            updateConnectionStatus('connected');
-        } else {
-            updateConnectionStatus('connecting');
-            connectWebSocket();
-        }
-    } else {
-        if (activeConnection) {
-            activeConnection.close();
-        }
         if (reconnectTimer) clearTimeout(reconnectTimer);
-        if (heartbeatInterval) clearInterval(heartbeatInterval);
-        updateConnectionStatus('disconnected');
+
+        reconnectTimer = setTimeout(() => {
+            connectWebSocket();
+            // Increase backoff time for next attempt
+            currentBackoff = Math.min(currentBackoff * BACKOFF_MULTIPLIER, MAX_BACKOFF);
+        }, currentBackoff);
     }
-});
+}
 
 function start() {
     document.getElementById('introContainer').remove();
     // Initial connection
     connectWebSocket();
+
+    // Update the visibility change handler
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+            console.log("vis")
+            // Check if we already have an active connection
+            if (activeConnection && activeConnection.readyState === WebSocket.OPEN) {
+                updateConnectionStatus('connected');
+            } else {
+                updateConnectionStatus('connecting');
+                connectWebSocket();
+            }
+        } else {
+            if (activeConnection) {
+                activeConnection.close();
+            }
+            if (reconnectTimer) clearTimeout(reconnectTimer);
+            if (heartbeatInterval) clearInterval(heartbeatInterval);
+            updateConnectionStatus('disconnected');
+        }
+    });
 }
 
 function updateConnectionStatus(status) {

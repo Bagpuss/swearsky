@@ -93,16 +93,16 @@ button {
 
 @keyframes fall {
     0% {
-        transform: translateY(200%) rotate(0deg);
+        transform: translateY(100%) rotate(0deg);
         opacity: 0;
     }
 
     10% {
-        transform: translateY(180%) rotate(2deg);
+        transform: translateY(90%) rotate(2deg);
         opacity: 1;
     }
 
-    90% {
+    80% {
         opacity: 1;
     }
 
