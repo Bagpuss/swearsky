@@ -248,7 +248,7 @@ function createSwear(words, record) {
     swearSpan.style.fontSize = `2em`;
     container.appendChild(swearSpan);
 
-    const duration = 5 + (Math.random() * 5);
+    const duration = 4 + (Math.random() * 4);
     container.style.animationDuration = `${duration}s`;
 
     swearContainer.appendChild(container);
