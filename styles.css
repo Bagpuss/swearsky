@@ -92,22 +92,12 @@ button {
 }
 
 @keyframes fall {
-    0% {
-        transform: translateY(100%) rotate(0deg);
-        opacity: 0;
-    }
-
-    10% {
-        transform: translateY(90%) rotate(2deg);
-        opacity: 1;
-    }
-
     80% {
         opacity: 1;
     }
 
     100% {
-        transform: translateY(-110svh) rotate(15deg);
+        transform: translateY(-100svh) rotate(0deg);
         opacity: 0;
     }
 }
@@ -170,9 +160,10 @@ button {
     cursor: pointer !important;
     pointer-events: all !important;
     z-index: 1;
-    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
-    top: 100svh !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+    top: 95svh !important;
     width: 8em;
+    height: auto;
     cursor: pointer;
     transition: 0.5s;
 }
