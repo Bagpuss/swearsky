@@ -1,4 +1,4 @@
-const howl = new Howl({src:["./sounds.webm?20241122","./sounds.mp3?20241122"],html5:false,volume:1,
+const howl = new Howl({src:["./sounds.webm?20241123","./sounds.mp3?20241123"],html5:false,volume:1,
     sprite: {
       "arse": [
         0,
@@ -22,7 +22,7 @@ const howl = new Howl({src:["./sounds.webm?20241122","./sounds.mp3?20241122"],ht
       ],
       "rectum": [
         11000,
-        2262.244897959183
+        2052.494331065759
       ],
       "twat": [
         15000,
@@ -211,12 +211,16 @@ const howl = new Howl({src:["./sounds.webm?20241122","./sounds.mp3?20241122"],ht
       "fuck off": [
         111000,
         1056.7346938775445
+      ],
+      "gobshite": [
+        114000,
+        797.0975056689298
       ]
     }
 });
 
 let swears = Object.keys(howl._sprite)
-swears.push("knobhead","bell end","bell-end","douche bag");
+swears.push("knobhead","bell end","bell-end","douche bag","motherfuckers");
 const regex = new RegExp(`\\b(${swears.join("|")})\\b`,"ig");
 
 // let playing = false;
@@ -283,7 +287,10 @@ function createSwear(words, record) {
         case "douche bag":
           audio = "douchebag";
           break;
-      }
+        case "motherfuckers":
+          audio = "motherfucker";
+          break;
+        }
       howl.play(audio);
     },200);
 
