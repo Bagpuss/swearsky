@@ -171,7 +171,6 @@ button:hover {
     width: 10em;
     height: auto;
     cursor: pointer;
-    transition: 0.5s;
 }
 
 .swear-speech:hover {
